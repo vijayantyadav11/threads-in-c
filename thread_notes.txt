@@ -1,0 +1,22 @@
+// To compile 
+// gcc -g -pthread filename.c -o filename
+// ./filename
+
+
+#define _OPEN_THREADS
+#include <pthread.h>
+
+
+// Creates a new thread within a process, with attributes defined by the 
+// thread attribute object, attr, that is created by pthread_attr_init().
+// If successful, pthread_create() returns 0.
+// If unsuccessful, pthread_create() returns -1. 
+int pthread_create(pthread_t *thread, pthread_attr_t *attr,
+                   void *(*start_routine) (void *arg), void *arg);
+
+// Allows the calling thread to wait for the ending of the target thread.
+// status contains a pointer to the status argument passed by the ending
+// thread
+int pthread_join(pthread_t thread, void **status);
+
+

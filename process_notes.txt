@@ -1,0 +1,10 @@
+wait(NULL) will block the parent process 
+until any of its children has finished.
+If the child terminates before the parent 
+process reaches wait(NULL) then the child 
+process turns to a zombie process 
+until its parent waits on it and 
+its released from memory.
+
+
+
